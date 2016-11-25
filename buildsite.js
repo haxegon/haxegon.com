@@ -3,6 +3,7 @@
   
   run "node buildsite.js" on your command line to generate to the output/ folder
 */
+var versionname = "0.2.0-alpha";
 
 var ncp = require('ncp').ncp;
 var fs = require('fs');
@@ -166,7 +167,7 @@ function genReferencePage(moduleName){
 	"<body>"+
 	"<p><a href='../index.html'>[back to index]</a></p>"+
 	"<p>"+
-	"<h1>Library Reference</h1>";
+	"<h1>Library Reference (v " + versionname + ")</h1>";
 
 	var tableStart = "<table>	"+
 	//"<thead><tr class='header'><td  >Name</td><td  >Description</td></tr></thead>"+
