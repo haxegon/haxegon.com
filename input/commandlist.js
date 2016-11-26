@@ -57,7 +57,7 @@ var haxeMethodArray = [
 var haxeHintArray = [
 
 ["Gfx.clearscreen","(color:Int)","F", "Clears the screen to the given colour."],
-["Gfx.clearcolor",":Int","P", "Set to the colour you want to clear the screen to at the start of each frame. If set to Col.TRANSPARENT, the the screen is not cleared at the start of each frame. (This is currently unimplemented in Haxegon)"],
+["Gfx.clearcolor",":Int","P", "Set to the colour you want to clear the screen to at the start of each frame. If set to Col.TRANSPARENT, the the screen is not cleared at the start of each frame. Default value is Col.BLACK."],
 ["Gfx.drawbox","(x:Float, y:Float, width:Float, height:Float, color:Int, alpha:Float = 1.0)","F", "Draw a box at (x, y) with given width, height, colour and alpha."],
 ["Gfx.fillbox","(x, y, width, height, col)","F", "Fill a box at (x, y) with given width, height, colour and alpha."],
 ["Gfx.drawtri","(x1:Float, y1:Float, x2:Float, y2:Float, x3:Float, y3:Float, color:Int, alpha:Float = 1.0)","F", "Draw a triangle between the points (x1, y1), (x2, y2) and (x3, y3) with given colour and alpha."],
