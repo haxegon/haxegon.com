@@ -331,6 +331,7 @@ var haxeHintArray = [
 ["Math.sqrt","(v:Float):Float","F"],
 ["Math.tan","(v:Float):Float","F"],
 
+["Core.time",":Float","C", "is equal to the number of seconds passed since the game started."],
 ["Core.showstats",":Bool","C", "Set to true to show stats like framerate."],
 ["Core.fps",":Int","C", "Change the game's framerate."],
 ["Core.callfunctionafterupdate","(f:Function)","P", "Advanced! Tells Haxegon to call this function after each scene's update() function."],
