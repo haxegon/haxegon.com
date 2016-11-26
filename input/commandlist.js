@@ -135,8 +135,8 @@ var haxeHintArray = [
 ["Col.MAGENTA","","Col"],
 ["Col.TRANSPARENT","","Col"],
 
-["Text.setfont","(fontname:String, size:Float = 1)","F","Loads a font from <b>data/graphics/fonts/</b>"],
-["Text.changesize","(fontsize:Float)","F","Change the size of the font. For ttf fonts, sizes are given in point format - e.g. 16, 32, 48, etc. For bitmap fonts, sizes are given in multiple scales - 1 is normal, 2 is double size, 3 is triple, etc."],
+["Text.font",":String","P","Set the font to a font from <b>data/graphics/fonts/</b>"],
+["Text.size",":Float","P","Change the size of the font. For ttf fonts, sizes are given in point format - e.g. 16, 32, 48, etc. For bitmap fonts, sizes are given in multiple scales - 1 is normal, 2 is double size, 3 is triple, etc."],
 ["Text.display","(x:Float, y:Float, text:String, color:Int = 0xFFFFFF)","F","Draws text on the screen at a given point."],
 ["Text.input",'(x:Float, y:Float, prompt:String, questioncolor:Int = 0xFFFFFF, answercolor:Int  = 0xCCCCCC):Bool',"F", "Displays a prompt on screen where you can type a string. Returns true when the user presses Key.ENTER."],
 ["Text.getinput","():String","F", "Returns the most recent value of Text.input() after Key.ENTER has been pressed."],
