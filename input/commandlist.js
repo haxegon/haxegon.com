@@ -146,8 +146,6 @@ var haxeHintArray = [
 ["Text.align","(position)","F","Sets the alignment for Text.display() commands. Pass either Text.LEFT, Text.CENTER or Text.RIGHT."],
 ["Text.width","(text:String):Float","F", "Returns the width in pixels of the given string."],
 ["Text.height","(text:String):Float","F", "Returns the height in pixels of the given string. If text is left blank, it returns the height in pixels of any line of text in the current font."],
-["Text.currentfont",":String","P", "Contains the name of the current font. (To do: roll this all into Text.setfont()"],
-["Text.currentsize",":Float","P", "Contains the size of the current font. (To do: roll this all into Text.changesize()"],
 ["Text.CENTER","","P", "A constant passed to functions like Text.align() and Text.rotation()."],
 ["Text.LEFT","","P", "A constant passed to functions like Text.align() and Text.rotation()."],
 ["Text.RIGHT","","P", "A constant passed to functions like Text.align() and Text.rotation()."],
