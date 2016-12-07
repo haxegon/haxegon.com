@@ -18,6 +18,8 @@ var modules = [];
 var enums = [];
 haxeHintArray = haxeHintArray.concat(haxeMethodArray);
 
+var pageContents = "";
+	
 for (var i=0;i<haxeHintArray.length;i++){
 	var r = haxeHintArray[i];
 	if (r.length<3){
@@ -135,7 +137,7 @@ function generatepage(currentpage) {
   pagefooter += '</div></body></html>';
 
   var doc = splittxt(fs.readFileSync("input/"+currentpage+".txt") + '');
-  var pagecontents = "";
+  pagecontents = "";
 
 	var state = "text";
 	for (var i=0; i < doc.length; i++){
@@ -151,52 +153,11 @@ function generatepage(currentpage) {
   fs.writeFileSync("output/" + currentpage + ".html", page);
 }
 
-function genReferencePage(moduleName){
-	var pageHeader = "<!DOCTYPE html>"+
-	"<html>"+
-	"<head>"+
-	' <meta charset="utf-8">'+
-	"	<title>Haxegon Reference " +"Getting Started"+"</title>"+
-	'<link rel="shortcut icon" href="../images/icon256.png" />'+
-	"<link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>"+
-	'<link rel="stylesheet" type="text/css" href="../css/referencestyle.css">'+
-	'<link rel="stylesheet" type="text/css" href="../css/codemirror.css">'+
-	'<script src="../scripts/codemirror/codemirror.js"></script>'+
-	'<script src="../scripts/codemirror/haxe.js"></script>'+
-	"</head>"+
-	"<body>"+
-	"<p><a href='../index.html'>[back to index]</a></p>"+
-	"<p>"+
-	"<h1>Library Reference (v " + versionname + ")</h1>";
-
-	var tableStart = "<table>	"+
-	//"<thead><tr class='header'><td  >Name</td><td  >Description</td></tr></thead>"+
-	"	<tbody>";
-
-	var tableEnd = 	"</tbody>"+
-	"</table>";
-
-	var pageFooter = '</body>'+
-	"</html>";
-
-	var pageContents = "";
+/* Given moduleName, generate and return as a string the actual contents of that module */
+function genpagecontents(moduleName){
+  pageContents = "";
 	var oldPreface="";
-
-	var moduleHeader="<div class='navBar'>";
-	for (var i=0;i<modules.length;i++){
-		var m = modules[i];
-		if (moduleHeader.length>0){
-			//moduleHeader+=" - ";
-		}
-		if (m===moduleName){
-			moduleHeader+='<span class="moduleSelected">'+m+"</span>";			
-		} else {
-			moduleHeader+='<a class="moduleButton" href="'+m.toLowerCase()+'.html">'+m+'</a>';
-		}
-	}
-	moduleHeader+="</div><p>";
-
-	var enumContents ="<div id='enumFrame'>";
+  var enumContents ="<div id='enumFrame'>";
 
 	if (moduleName==="Col"){
 		enumContents ="<div id='colorFrame'>";		
@@ -228,6 +189,10 @@ function genReferencePage(moduleName){
 				fn = '[1,2,3]'+"."+postface;
 			}
 		}
+		
+		if (moduleName==="extraCol"){
+      fn = 'Col'+"."+postface;
+    }
 
 		counter++;
 		var row = '<tr class="' +  ((counter%2==0)?"even":"odd")+'">';
@@ -257,7 +222,7 @@ function genReferencePage(moduleName){
 			}
 		}
 		//row+=<td>"+tag+"</td>;
-		row+="<td><div class=\"funcdec\">"+highlight(fn+"")+"</div>";
+		row+="<td><div class=\"funcdec\">" + highlight(fn+"")+"</div>";
 		if (doc.length>0){
 			row+="<div class='docLine'>"+doc+"</div>";
 		}
@@ -286,13 +251,77 @@ function genReferencePage(moduleName){
 		}
 		enumAdded=true;
 	}
-	 if (moduleName==="Font"){
+	
+	if (moduleName==="Font"){
 	 	enumContents+="</table>"
 	 } else {
 		enumContents+="</div>";
 	}
+	
+	return enumContents;
+}
+
+function genReferencePage(moduleName){
+	var pageHeader = "<!DOCTYPE html>"+
+	"<html>"+
+	"<head>"+
+	' <meta charset="utf-8">'+
+	"	<title>Haxegon Reference " +"Getting Started"+"</title>"+
+	'<link rel="shortcut icon" href="../images/icon256.png" />'+
+	"<link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>"+
+	'<link rel="stylesheet" type="text/css" href="../css/referencestyle.css">'+
+	'<link rel="stylesheet" type="text/css" href="../css/codemirror.css">'+
+	'<script src="../scripts/codemirror/codemirror.js"></script>'+
+	'<script src="../scripts/codemirror/haxe.js"></script>'+
+	"</head>"+
+	"<body>"+
+	"<p><a href='../index.html'>[back to index]</a></p>"+
+	"<p>"+
+	"<h1>Library Reference (v " + versionname + ")</h1>";
+
+	var tableStart = "<table>	"+
+	//"<thead><tr class='header'><td  >Name</td><td  >Description</td></tr></thead>"+
+	"	<tbody>";
+
+	var tableEnd = 	"</tbody>"+
+	"</table>";
+
+	var pageFooter = '</body>'+
+	"</html>";
+
+	var moduleHeader="<div class='navBar'>";
+	for (var i=0;i<modules.length;i++){
+		var m = modules[i];
+		if (moduleHeader.length>0){
+			//moduleHeader+=" - ";
+		}
+		if(m.substr(0, 5) != "extra"){
+      if (m===moduleName){
+        moduleHeader+='<span class="moduleSelected">'+m+"</span>";			
+      } else {
+        moduleHeader+='<a class="moduleButton" href="'+m.toLowerCase()+'.html">'+m+'</a>';
+      }
+    }
+	}
+	moduleHeader+="</div><p>";
+	
+	var thispageContents = "";
+	if (moduleName==="Col"){
+	  var enumContents = genpagecontents("Col");
+	  thispageContents = enumContents;
+	  
+	  thispageContents += "<br />" + tableStart;
+	  enumContents = genpagecontents("extraCol");
+	  thispageContents += pageContents;
+	}else if (moduleName==="Key"){
+	  var enumContents = genpagecontents("Key");
+	  thispageContents = enumContents;
+	}else{
+    var enumContents = genpagecontents(moduleName);
+    thispageContents += pageContents;
+	}
+	
 	var tableHeader = "<h3 class='moduleHeader'>"+ moduleName+"</h3><p>";
-	pageContents = pageContents;
 
 	var moduleDescription="";
 	if (moduleDescriptions.hasOwnProperty(moduleName) && moduleDescriptions[moduleName].length>0){
@@ -300,10 +329,10 @@ function genReferencePage(moduleName){
 	}
 	
 	if (moduleName.length>0){		
-		var wholePage = pageHeader+moduleHeader+tableHeader+moduleDescription+tableStart+pageContents+tableEnd+pageFooter;
-		if (enums.indexOf(moduleName)>=0){
-			wholePage = pageHeader+moduleHeader+tableHeader+moduleDescription+enumContents+pageFooter;
-		} 
+		var wholePage = pageHeader+moduleHeader+tableHeader+moduleDescription+tableStart+thispageContents+tableEnd+pageFooter;
+		//if (enums.indexOf(moduleName)>=0){
+		//	wholePage = pageHeader+moduleHeader+tableHeader+moduleDescription+enumContents+pageFooter;
+		//} 
 		fs.writeFileSync("output/reference/"+moduleName.toLowerCase()+".html",wholePage);
 	} else {
 		var wholePage = pageHeader+moduleHeader+pageFooter;
