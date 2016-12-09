@@ -6,11 +6,15 @@ Rough guide:
  
  2 - Install the OpenFL library: <a href="http://www.openfl.org/learn/docs/getting-started/">OpenFl - Getting Started</a>
  
- 3 - Install the Haxegon library: <code>haxelib install haxegon</code>
+ 3 - Ensure OpenFL is properly installed by following these instructions:
  
- 4 - Install an IDE (for windows try <a href="http://haxedevelop.org/">HaxeDevelop</a>, for Mac/Linux try <a href="https://sublimetext.com/2">Sublime Text 2</a>).
+<img src="images/openfl-stuff.png">
  
- 5 - Download a <a href="https://github.com/TerryCavanagh/haxegon/raw/master/blankproject.zip">blank haxegon project</a>!
+ 4 - Install the Haxegon library: <code>haxelib install haxegon</code>
+ 
+ 5 - Install an IDE (for windows try <a href="http://haxedevelop.org/">HaxeDevelop</a>, for Mac/Linux try <a href="https://sublimetext.com/2">Sublime Text 2</a>).
+ 
+ 6 - Download a <a href="https://github.com/TerryCavanagh/haxegon/raw/master/blankproject.zip">blank haxegon project</a>!
  
 You can find examples here: <a href="https://github.com/TerryCavanagh/haxegon-samples">haxegon-samples</a>
 
