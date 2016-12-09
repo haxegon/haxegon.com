@@ -6,9 +6,7 @@ Rough guide:
  
  2 - Install the OpenFL library: <a href="http://www.openfl.org/learn/docs/getting-started/">OpenFl - Getting Started</a>
  
- 3 - Ensure OpenFL is properly installed by following these instructions:
- 
-<img src="images/openfl-stuff.png">
+ 3 - Ensure OpenFL is properly installed by following <a href="images/openfl-stuff.png">these instructions!</a>
  
  4 - Install the Haxegon library: <code>haxelib install haxegon</code>
  
