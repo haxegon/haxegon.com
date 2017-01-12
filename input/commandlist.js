@@ -11,7 +11,8 @@ var moduleDescriptions = {
 	Scene:"Scene management and control!<br /><br />A Scene in Haxegon is a class with an update() function, and optionally with the following functions:<br />new() (called when you first change to this scene)<br />reset() (called every time your change to this scene)<br />render() (for optionally seperating your logic and drawing code)<br /><br />The default Scene when your program starts is <b>Main</b>, but you can change this with the Scene.change() function.",
 	S:"Helpful string manipulation functions.",
 	Random:"Pick things randomly.",
-	Data:"Simple loading and saving of data, and reading in textfiles and CSV files.",
+	Data:"Reading in textfiles and CSV files.",
+	Save:"Simple loading and saving of data.",
 	Math:"See <a href=\"http://api.haxe.org/Math.html\">Haxe's Math implemenation</a> here.",
 };
 
@@ -158,9 +159,12 @@ var haxeHintArray = [
 ["Data.loadcsv","(csvfile:String, delimiter = \",\"):Array<???>","F", "Loads in a </b>.csv</b> file from <b>data/text/</b> as an array of values."],
 ["Data.load2dcsv","(csvfile:String, delimiter = \",\"):Array<?>","F", "Loads in a two-dimensional </b>.csv</b> file from <b>data/text/</b> as a 2d array of values. Use <b>Data.width</b> and <b>Data.height<b> to read the width and height of the loaded 2d CSV."],
 ["Data.blank2darray","(width:Int, height:Int):Array<Array<?>>","F", "Helpful function to give you a blank 2D array of given width and height!"],
-["Data.savefile",":String","P", "Optional! Sets the name of the savefile to that <b>Data.load()</b> and <b>Data.save()</b> will use."],
-["Data.save","(key:String, value:?)","F", "Saves a value. Can be loaded later with <b>Data.load()</b>."],
-["Data.load","(key:String)","F", "Loads a value that you've previously saved with <b>Data.save()</b>. If no saved value for that key exists, then it returns 0."],
+
+["Save.filename",":String","P", "Optional! Sets the name of the savefile to that <b>Save.load()</b> and <b>Save.save()</b> will use. By default, the save filename is <i>\"haxegongame\"</i>."],
+["Save.save","(key:String, value:?)","F", "Saves a value. Can be loaded later with <b>Save.load()</b>."],
+["Save.load","(key:String)","F", "Loads a value that you've previously saved with <b>Save.save()</b>. If no saved value for that key exists, then it returns 0."],
+["Save.exists","(key:String):Bool","F", "Returns true if a value has been saved for this key in the current file, false otherwise."],
+["Save.delete","([filename:String])","F", "Deletes all saved values in a given filename. If no filename is given, deletes all saved values in <i>\"haxegongame\"</i>."],
 
 ["Music.loadsound","(soundname:String, volumelevel:Float = 1.0)","F", "Loads in a sound from <b>data/sounds/</b> - either MP3 or OGG/WAV, depending on platform. 'Sounds' are usually short sounds effects that are played without looping. Optionally set a volume level for the sound (0.5 loads it in at half volume, for example.)"],
 ["Music.playsound","(soundname:String, volume:Float = 1.0, offset:Float = 0.0)", "F", "Plays a sound effect. Optionally set a volume between 0.0-1.0, or an optional startpoint (where 1.0 is 1 second into the sound)."],
