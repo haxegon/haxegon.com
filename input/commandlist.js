@@ -160,7 +160,7 @@ var haxeHintArray = [
 ["Data.blank2darray","(width:Int, height:Int):Array<Array<?>>","F", "Helpful function to give you a blank 2D array of given width and height!"],
 ["Data.savefile",":String","P", "Optional! Sets the name of the savefile to that <b>Data.load()</b> and <b>Data.save()</b> will use."],
 ["Data.save","(key:String, value:?)","F", "Saves a value. Can be loaded later with <b>Data.load()</b>."],
-["Data.load","(key:String)","F", "Loads a value that you've previously saved with <b>Data.save()</b>."],
+["Data.load","(key:String)","F", "Loads a value that you've previously saved with <b>Data.save()</b>. If no saved value for that key exists, then it returns 0."],
 
 ["Music.loadsound","(soundname:String, volumelevel:Float = 1.0)","F", "Loads in a sound from <b>data/sounds/</b> - either MP3 or OGG/WAV, depending on platform. 'Sounds' are usually short sounds effects that are played without looping. Optionally set a volume level for the sound (0.5 loads it in at half volume, for example.)"],
 ["Music.playsound","(soundname:String, volume:Float = 1.0, offset:Float = 0.0)", "F", "Plays a sound effect. Optionally set a volume between 0.0-1.0, or an optional startpoint (where 1.0 is 1 second into the sound)."],
