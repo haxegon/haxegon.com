@@ -3,7 +3,7 @@
   
   run "node buildsite.js" on your command line to generate to the output/ folder
 */
-var versionname = "0.5.0";
+var versionname = "0.6.0";
 
 var ncp = require('ncp').ncp;
 var fs = require('fs');
