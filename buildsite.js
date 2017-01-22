@@ -181,6 +181,10 @@ function genpagecontents(moduleName){
 		if (fn.indexOf(moduleName)!==0){
 			continue;
 		}
+		
+		if(moduleName == "S") {
+		  if(r[0].indexOf(".") != 1) continue;
+		}
 
 		if (tag.substr(0,2)==="M_"){
 			if (moduleName==="String"){
