@@ -2,7 +2,7 @@ var moduleDescriptions = {
 	Gfx:"For drawing and manipulating shapes and images.",
 	Col:"So many colors!",
 	Text:"For displaying text on screen.",
-	Music:"For all your music and sound needs.",
+	Music:"For all your music and sound needs.<br /><br />Like OpenFL, Haxegon uses .OGG files on all platforms except for flash. (This may change in future, and if it does, I'll update Haxegon to match.)",
 	Key:"A list of all of the key names. For use with <b>Input</b> functions.",
 	Input:"Responding to key presses!",
 	Mouse:"Checking out mouse movement and clicks.",
