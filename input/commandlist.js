@@ -154,7 +154,7 @@ var haxeHintArray = [
 ["Text.TOP","","P", "A constant passed to functions like Text.align() and Text.rotation()."],
 ["Text.BOTTOM","","P", "A constant passed to functions like Text.align() and Text.rotation()."],
 
-["Data.loadtext","(textfile:String):Array<String>","F", "Loads in a </b>.txt</b> file from <b>data/text/</b> as an array of Strings."],
+["Data.loadtext","(textfile:String):Array<String>","F", "Loads in a </b>.txt</b> file from <b>data/text/</b> as an array of Strings, split by newlines. The files needs to have the extension .txt."],
 ["Data.loadcsv","(csvfile:String, delimiter = \",\"):Array<???>","F", "Loads in a </b>.csv</b> file from <b>data/text/</b> as an array of values."],
 ["Data.load2dcsv","(csvfile:String, delimiter = \",\"):Array<?>","F", "Loads in a two-dimensional </b>.csv</b> file from <b>data/text/</b> as a 2d array of values. Use <b>Data.width</b> and <b>Data.height<b> to read the width and height of the loaded 2d CSV."],
 ["Data.blank2darray","(width:Int, height:Int):Array<Array<?>>","F", "Helpful function to give you a blank 2D array of given width and height!"],
