@@ -350,6 +350,7 @@ var haxeHintArray = [
 ["Core.fps",":Int","C", "Change the game's framerate."],
 ["Core.quit","()","P", "Native targets only. Closes the application."],
 ["Core.window",":Window","C", "Native targets only. Gives you access to the native window object. See <a href=\"http://api.openfl.org/lime/ui/Window.html\">OpenFL documentation</a> for more information."],
+["Core.delaycall","(f:Function, t:Float)","P", "Tells Haxegon to call this function after \"t\" seconds have passed."],
 ["Core.callfunctionafterupdate","(f:Function)","P", "Advanced! Tells Haxegon to call this function after each scene's update() function."],
 ["Core.callfunctionafterrender","(f:Function)","P", "Advanced! Tells Haxegon to call this function after each scene's render() function."]
 ];
