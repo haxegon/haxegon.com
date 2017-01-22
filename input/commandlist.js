@@ -250,7 +250,7 @@ var haxeHintArray = [
 ["Input.justpressed","(Key.ENTER):Bool","F","True if the key has been pressed this frame."],
 ["Input.pressed","(Key.LEFT):Bool","F","True if this key is currently held down."],
 ["Input.justreleased","(Key.SPACE):Bool","F","True if the key has been released this frame"],
-["Input.forcerelease","(Key.SPACE)","F","If the player is holding down this key, 'force' release it. Future calls to Input.pressed() will return false until the player lifts their finger and presses it again."],
+["Input.forcerelease","(Key.SPACE)","F","If the player is holding down this key, 'force' release it. Future calls to Input.pressed() will return false until the player lifts their finger and presses it again. If you call Input.forcerelease() without any parameters, it releases all keypresses."],
 ["Input.delaypressed","(Key.Z, 5):Bool","F","True once every N frames, if the key is pressed."],
 ["Input.pressheldtime","(Key.Z):Int","F","Tells you how many frames a key has been pressed down for."],
 ["Input.getchar","():String","F","Returns the last letter pressed."],
