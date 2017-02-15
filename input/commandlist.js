@@ -262,7 +262,7 @@ var haxeHintArray = [
 ["Mouse.deltax",":Int","P", "Returns the Mouse's change in x coordinate on screen from the <b>last frame</b>. Can be useful for tracking movement."],
 ["Mouse.deltay",":Int","P", "Returns the Mouse's change in y coordinate on screen from the <b>last frame</b>. Can be useful for tracking movement."],
 ["Mouse.mousewheel",":Int","P", "Returns 1 if the mouse has scrolled up, or -1 if the mouse has scrolled down."],
-["Mouse.mouseoffstage","():Bool","F", "Is true when the mouse cursor is offstage, false otherwise."],
+["Mouse.offscreen","():Bool","F", "Is true when the mouse cursor is offscreen, false otherwise."],
 ["Mouse.cursormoved","():Bool","F", "Is true if the mouse cursor has moved this frame, false otherwise."],
 ["Mouse.leftclick","():Bool","F","True if the button has been clicked this frame."],
 ["Mouse.leftheld","():Bool","F","True if the button is held down this frame."],
