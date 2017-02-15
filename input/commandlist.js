@@ -14,7 +14,7 @@ var moduleDescriptions = {
 	Data:"Reading in textfiles and CSV files.",
 	Save:"Simple loading and saving of data.",
 	Math:"See <a href=\"http://api.haxe.org/Math.html\">Haxe's Math implemenation</a> here.",
-	Help:"Some useful helper functions.",
+	Geom:"Some useful helper geometry functions.",
 };
 
 var haxeLibraryArray = [
@@ -355,8 +355,11 @@ var haxeHintArray = [
 ["Core.callfunctionafterupdate","(f:Function)","P", "Advanced! Tells Haxegon to call this function after each scene's update() function."],
 ["Core.callfunctionafterrender","(f:Function)","P", "Advanced! Tells Haxegon to call this function after each scene's render() function."],
 
-["Help.inbox","(x, y, rectx, recty, rectwidth, rectheight):Bool","F", "Returns true if the point (x, y) is in the rectangle (rectx, recty)x(rectwidth, rectheight)."],
-["Help.overlap","(x1, y1, w1, h1, x2, y2, w2, h2):Bool","F", "Returns true if the rectangle (x1, y1)x(w1, h1) overlaps with the rectangle (x2, y2)x(w2, h2)."],
-["Help.distance","(x1, y1, x2, y2):Float","F", "Returns the distance between the points (x1, y1) and (x2, y2)."],
-["Help.getangle","(x1, y1, x2, y2):Float","F", "Returns the angle (in degrees) between the points (x1, y1) and (x2, y2)."]
+["Geom.inbox","(x, y, rectx, recty, rectwidth, rectheight):Bool","F", "Returns true if the point (x, y) is in the rectangle (rectx, recty)x(rectwidth, rectheight)."],
+["Geom.overlap","(x1, y1, w1, h1, x2, y2, w2, h2):Bool","F", "Returns true if the rectangle (x1, y1)x(w1, h1) overlaps with the rectangle (x2, y2)x(w2, h2)."],
+["Geom.distance","(x1, y1, x2, y2):Float","F", "Returns the distance between the points (x1, y1) and (x2, y2)."],
+["Geom.getangle","(x1, y1, x2, y2):Float","F", "Returns the angle (in degrees) between the points (x1, y1) and (x2, y2)."],
+["Geom.clamp","(value, min, max):Float","F", "Clamps a value between a min and max. If the value is less than min, return min, if it's more than max, return max, otherwise just return the value."],
+["Geom.todegrees","(radians):Float","F", "Converts degrees to radians."],
+["Geom.toradians","(degrees):Float","F", "Converts radians to degrees."]
 ];
