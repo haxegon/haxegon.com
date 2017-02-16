@@ -358,7 +358,8 @@ var haxeHintArray = [
 ["Geom.inbox","(x, y, rectx, recty, rectwidth, rectheight):Bool","F", "Returns true if the point (x, y) is in the rectangle (rectx, recty)x(rectwidth, rectheight)."],
 ["Geom.overlap","(x1, y1, w1, h1, x2, y2, w2, h2):Bool","F", "Returns true if the rectangle (x1, y1)x(w1, h1) overlaps with the rectangle (x2, y2)x(w2, h2)."],
 ["Geom.distance","(x1, y1, x2, y2):Float","F", "Returns the distance between the points (x1, y1) and (x2, y2)."],
-["Geom.getangle","(x1, y1, x2, y2):Float","F", "Returns the angle (in degrees) between the points (x1, y1) and (x2, y2)."],
+["Geom.getangle","(x1, y1, x2, y2):Float","F", "Returns the angle (in radians) between the points (x1, y1) and (x2, y2)."],
+["Geom.anglebetween","(angle1, angle2):Float","F", "Returns the smallest difference between two angles, so that if you add the result to angle1, you get angle2. (All haxegon Geom and Math functions use radians.)"],
 ["Geom.clamp","(value, min, max):Float","F", "Clamps a value between a min and max. If the value is less than min, return min, if it's more than max, return max, otherwise just return the value."],
 ["Geom.todegrees","(radians):Float","F", "Converts degrees to radians."],
 ["Geom.toradians","(degrees):Float","F", "Converts radians to degrees."]
