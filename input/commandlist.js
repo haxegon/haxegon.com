@@ -93,7 +93,7 @@ var haxeHintArray = [
 ["Gfx.grabimagefromimage","(imagetocopyto:String, sourceimage:String, sourceimagex:Float, sourceimagey:Float)","F", "This function grabs an image from another image at position (sourceimagex, sourceimagey), and places it in the new image."],
 ["Gfx.copytile","(totileset:String, totilenumber:Int, fromtileset:String, fromtilenumber:Int)","F", "Copies a tile from one tileset to another. If the source tile is larger than the destination tile, the tile is cropped."],
 ["Gfx.rotation","(angle:Float, xpivot=Gfx.CENTER, ypivot=Gfx.CENTER)","F","Rotates image drawing functions. Optionally set rotation pivot point."],
-["Gfx.scale","(xscale:Float, yscale:Float, xpivot=Gfx.CENTER, ypivot=Gfx.CENTER)","F","Scales image drawing functions, as it's being drawn. Optionally set scaling pivot point."],
+["Gfx.scale","(xscale:Float, yscale:Float, xpivot=Gfx.CENTER, ypivot=Gfx.CENTER)","F","Scales image drawing functions like Gfx.drawimage and Gfx.drawtile. Optionally set scaling pivot point. Scales X and Y seperately - if you call with only one argument, it scales X and Y the same. If you call with no arguments, it resets the scale to 1.0."],
 ["Gfx.imagecolor","(c:Int = Col.WHITE)","F","Set a colour multipler in RGB for image drawing functions. Leave parameter blank to return to normal."],
 ["Gfx.imagealpha","(a:Float = 1.0)","F","Set an alpha multipler for image drawing functions. Leave parameter blank to return to normal."],
 ["Gfx.loadtiles","(tilesetname:String, tilewidth:Int, tileheight:Int)","P", "Loads a .PNG or .JPG image from data/graphics/, and splits it into tiles."],
