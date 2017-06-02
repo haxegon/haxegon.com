@@ -321,9 +321,12 @@ var haxeHintArray = [
 ["Random.int","(from:Int, to_inclusive:Int):Int","F", "Returns an Integer between 'from' and 'to_inclusive'."],
 ["Random.float","(from:Int, to_inclusive:Int):Float","F", "Returns a Float between 'from' and 'to_inclusive'."],
 ["Random.string","(length:Int, ?characters:String):String","F", "Returns a random String of a given length. You can optionally specify which characters to use, otherwise the default is (a-zA-Z0-9)."],
+["Random.random","():Float","F", "Returns an Float between 0 and 1."],
 ["Random.bool","():Bool","F","50:50 chance of being true/false"],
-["Random.chance","(n:int):Bool","F","n% chance of being true."],
+["Random.chance","(n:Float):Bool","F","n% chance (out of 100%) of being true."],
 ["Random.pick","(list:Array<T>):T","F","Picks a random element from an array."],
+["Random.shuffle","(list:Array<T>):T","F","Shuffles an array and returns it."],
+["Random.seed",":Int","P","The current seed. Set to an integer of your choosing for a predicable sequence of results."],
 
 ["Math.PI",":Float","C"],
 ["Math.abs","(v:Float):Float","F"],
