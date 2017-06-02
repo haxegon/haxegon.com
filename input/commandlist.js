@@ -1,6 +1,7 @@
 var moduleDescriptions = {
 	Gfx:"For drawing and manipulating shapes and images.",
 	Col:"So many colors!",
+	Filter:"Use simple fullscreen filters.",
 	Text:"For displaying text on screen.",
 	Music:"For all your music and sound needs.<br /><br />Like OpenFL, Haxegon uses .OGG files on all platforms except for flash. (This may change in future, and if it does, I'll update Haxegon to match.)",
 	Key:"A list of all of the key names. For use with <b>Input</b> functions.",
@@ -141,6 +142,10 @@ var haxeHintArray = [
 ["extraCol.shiftblue","(col, amount):Int","F","Returns a colour with the blue component (0-255) adjusted."],
 ["extraCol.multiplysaturation","(col, amount):Int","F","Returns a colour with the saturation (0-1.0) multiplied."],
 ["extraCol.multiplylightness","(col, amount):Int","F","Returns a colour with the lightness (0-1.0) multiplied."],
+
+["Filter.bloom",":Float","P", "Turns on a fullscreen bloom filter. You can set it to 1.0 for a normal bloom effect, but any value will work."],
+["Filter.blur",":Bool","P", "Turns on a fullscreen blur filter. Set to <b>true</b> or <b>false</b> to toggle on and off."],
+["Filter.reset","()","F","Turns off all currently enabled filters."],
 
 ["Text.font",":String","P","Set the font to a font from <b>data/graphics/fonts/</b>"],
 ["Text.size",":Float","P","Change the size of the font. For ttf fonts, sizes are given in point format - e.g. 16, 32, 48, etc. For bitmap fonts, sizes are given in multiple scales - 1 is normal, 2 is double size, 3 is triple, etc."],
