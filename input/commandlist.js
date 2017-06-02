@@ -161,7 +161,7 @@ var haxeHintArray = [
 
 ["Data.loadtext","(textfile:String):Array<String>","F", "Loads in a </b>.txt</b> file from <b>data/text/</b> as an array of Strings, split by newlines. The files needs to have the extension .txt."],
 ["Data.loadcsv","(csvfile:String, delimiter = \",\"):Array<???>","F", "Loads in a </b>.csv</b> file from <b>data/text/</b> as an array of values."],
-["Data.load2dcsv","(csvfile:String, delimiter = \",\"):Array<?>","F", "Loads in a two-dimensional </b>.csv</b> file from <b>data/text/</b> as a 2d array of values. Use <b>Data.width</b> and <b>Data.height<b> to read the width and height of the loaded 2d CSV."],
+["Data.load2dcsv","(csvfile:String, delimiter = \",\"):Array<?>","F", "Loads in a two-dimensional </b>.csv</b> file from <b>data/text/</b> as a 2d array of values. Use <b>Data.width</b> and <b>Data.height</b> to read the width and height of the loaded 2d CSV."],
 ["Data.blank2darray","(width:Int, height:Int):Array<Array<?>>","F", "Helpful function to give you a blank 2D array of given width and height!"],
 
 ["Save.filename",":String","P", "Optional! Sets the name of the savefile to that <b>Save.load()</b> and <b>Save.savevalue()</b> will use. By default, the save filename is <i>\"haxegongame\"</i>."],
@@ -322,13 +322,8 @@ var haxeHintArray = [
 ["Random.float","(from:Int, to_inclusive:Int):Float","F", "Returns a Float between 'from' and 'to_inclusive'."],
 ["Random.string","(length:Int, ?characters:String):String","F", "Returns a random String of a given length. You can optionally specify which characters to use, otherwise the default is (a-zA-Z0-9)."],
 ["Random.bool","():Bool","F","50:50 chance of being true/false"],
-["Random.occasional","():Bool","F","True one time in five. (20% chance)"],
-["Random.rare","():Bool","F","True one time in twenty. (5% chance)"],
 ["Random.chance","(n:int):Bool","F","n% chance of being true."],
 ["Random.pick","(list:Array<T>):T","F","Picks a random element from an array."],
-["Random.pickstring",'("this one", "or this one?", "maybe this one?"):String',"F","Pick between a list of strings. Can list up to 12!"],
-["Random.pickint","(5, 14, 72, 92, 1, -723, 8):Int","F","Pick between a list of integers. Can list up to 12!"],
-["Random.pickfloat","(5.1, 14.2, 72.3, 92.4, 1.5, -723.6, 8.7):Float","F","Pick between a list of floating-point numbers. Can list up to 12!"],
 
 ["Math.PI",":Float","C"],
 ["Math.abs","(v:Float):Float","F"],
