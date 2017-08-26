@@ -16,6 +16,7 @@ var moduleDescriptions = {
 	Save:"Simple loading and saving of data.",
 	Math:"See <a href=\"http://api.haxe.org/Math.html\">Haxe's Math implemenation</a> here.",
 	Geom:"Some useful helper geometry functions.",
+	Debug:"Simple system for displaying debug info.",
 };
 
 var haxeLibraryArray = [
@@ -95,8 +96,11 @@ var haxeHintArray = [
 ["Gfx.copytile","(totileset:String, totilenumber:Int, fromtileset:String, fromtilenumber:Int)","F", "Copies a tile from one tileset to another. If the source tile is larger than the destination tile, the tile is cropped."],
 ["Gfx.rotation","(angle:Float, xpivot=Gfx.CENTER, ypivot=Gfx.CENTER)","F","Rotates image drawing functions. Optionally set rotation pivot point."],
 ["Gfx.scale","(xscale:Float, yscale:Float, xpivot=Gfx.CENTER, ypivot=Gfx.CENTER)","F","Scales image drawing functions like Gfx.drawimage and Gfx.drawtile. Optionally set scaling pivot point. Scales X and Y seperately - if you call with only one argument, it scales X and Y the same. If you call with no arguments, it resets the scale to 1.0."],
-["Gfx.imagecolor","(c:Int = Col.WHITE)","F","Set a colour multipler in RGB for image drawing functions. Leave parameter blank to return to normal."],
-["Gfx.imagealpha","(a:Float = 1.0)","F","Set an alpha multipler for image drawing functions. Leave parameter blank to return to normal."],
+["Gfx.imagecolor",":Int","P","Set a colour multipler in RGB for image drawing functions. Set to Col.WHITE or call Gfx.resetcolor() to return to normal."],
+["Gfx.resetcolor","()", "F", "Reset colour multiplier for image drawing functions. Same as calling Gfx.imagecolor = Col.WHITE;"],
+["Gfx.imagealpha",":Float","P","Set an alpha multipler [0 to 1.0] for image drawing functions. Default value is 1. Set to 1 or call Gfx.resetalpha() to return to normal."],
+["Gfx.resetalpha","()", "F", "Reset alpha multiplier for image drawing functions. Same as calling Gfx.imagealpha = 1;"],
+["Gfx.reset","()", "F", "Reset alpha multiplier, colour multiplier, rotation and scale for image drawing functions."],
 ["Gfx.loadtiles","(tilesetname:String, tilewidth:Int, tileheight:Int)","P", "Loads a .PNG or .JPG image from data/graphics/, and splits it into tiles."],
 ["Gfx.createtiles","(tilesetname:String, tilewidth:Int, tileheight:Int, amount:Int)","P", "Creates a blank tileset, with the name 'tilesetname', with each tile a given width and height, containing 'amount' tiles."],
 ["Gfx.drawtile","(x:Float, y:Float, tilesetname:String, tilenum:Int)","F", "Draw this tile to the point (x, y)."],
@@ -149,7 +153,7 @@ var haxeHintArray = [
 
 ["Text.font",":String","P","Set the font to a font from <b>data/graphics/fonts/</b>"],
 ["Text.size",":Float","P","Change the size of the font. For ttf fonts, sizes are given in point format - e.g. 16, 32, 48, etc. For bitmap fonts, sizes are given in multiple scales - 1 is normal, 2 is double size, 3 is triple, etc."],
-["Text.display","(x:Float, y:Float, text:String, color:Int = 0xFFFFFF)","F","Draws text on the screen at a given point."],
+["Text.display","(x:Float, y:Float, text:String, color:Int = 0xFFFFFF, alpha:Float = 1.0)","F","Draws text on the screen at a given point."],
 ["Text.input",'(x:Float, y:Float, prompt:String, questioncolor:Int = 0xFFFFFF, answercolor:Int  = 0xCCCCCC):Bool',"F", "Displays a prompt on screen where you can type a string. Returns true when the user presses Key.ENTER."],
 ["Text.getinput","():String","F", "Returns the most recent value of Text.input() after Key.ENTER has been pressed."],
 ["Text.inputmaxlength",":Int","P","Sets maximum response length of Text.input()."],
@@ -185,6 +189,7 @@ var haxeHintArray = [
 ["Music.stopsong","()","F", "Stops the currently playing song."],
 ["Music.fadeout","()","F", "Fades out the currently playing song."],
 
+["Key.ANY","","E"],
 ["Key.A","","E"],
 ["Key.B","","E"],
 ["Key.C","","E"],
@@ -257,10 +262,10 @@ var haxeHintArray = [
 ["Key.LEFT","","E"],
 ["Key.RIGHT","","E"],
 
-["Input.justpressed","(Key.ENTER):Bool","F","True if the key has been pressed this frame."],
-["Input.pressed","(Key.LEFT):Bool","F","True if this key is currently held down."],
+["Input.justpressed","(Key.ENTER):Bool","F","True if the key has been pressed this frame. (Use Key.ANY to check if any key is pressed this frame.)"],
+["Input.pressed","(Key.LEFT):Bool","F","True if this key is currently held down. (Use Key.ANY to check if any key is held down.)"],
 ["Input.justreleased","(Key.SPACE):Bool","F","True if the key has been released this frame"],
-["Input.forcerelease","(Key.SPACE)","F","If the player is holding down this key, 'force' release it. Future calls to Input.pressed() will return false until the player lifts their finger and presses it again. If you call Input.forcerelease() without any parameters, it releases all keypresses."],
+["Input.forcerelease","(Key.SPACE)","F","If the player is holding down this key, 'force' release it. Future calls to Input.pressed() will return false until the player lifts their finger and presses it again. If you call Input.forcerelease() without any parameters or with Key.ANY, it releases all keypresses."],
 ["Input.delaypressed","(Key.Z, 5):Bool","F","True once every N frames, if the key is pressed."],
 ["Input.pressheldtime","(Key.Z):Int","F","Tells you how many frames a key has been pressed down for."],
 ["Input.getchar","():String","F","Returns the last letter pressed."],
@@ -369,5 +374,8 @@ var haxeHintArray = [
 ["Geom.anglebetween","(angle1, angle2):Float","F", "Returns the smallest difference between two angles, so that if you add the result to angle1, you get angle2. (All haxegon Geom and Math functions use radians.)"],
 ["Geom.clamp","(value, min, max):Float","F", "Clamps a value between a min and max. If the value is less than min, return min, if it's more than max, return max, otherwise just return the value."],
 ["Geom.todegrees","(radians):Float","F", "Converts degrees to radians."],
-["Geom.toradians","(degrees):Float","F", "Converts radians to degrees."]
+["Geom.toradians","(degrees):Float","F", "Converts radians to degrees."],
+
+["Debug.log","(anything)","F", "Traces out a line in the haxegon console, and the terminal. To trace to the terminal only, simply use trace();"],
+["Debug.clear","()","F", "Clears the haxegon console."]
 ];
