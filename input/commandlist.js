@@ -82,6 +82,7 @@ var haxeHintArray = [
 ["Gfx.screenheightmid",":Int","P","Returns screen height divided by two."],
 ["Gfx.fullscreen",":Bool","P", "Set <b>true</b> or <b>false</b> to switch between window and fullscreen."],
 ["Gfx.resizescreen","(width, height, keeppixelratio = false)","F", "Sets the width and the height of the screen canvas. Automatically scales the screen to fit in the current window, depending on your resize settings. Advanced settings: If you set both width and height to 0, your screen size will instead match the window exactly, with Gfx.screenwidth and Gfx.screenheight changing to match. If you set EITHER width or height to 0, then you'll get a dynamic canvas, where one axis is streched and the other changes to match the window width. \"keeppixelratio\" is an optional parameter that tells the screen to use black borders around your screen when scaling to keep a 1:1 pixel ratio, instead of stretching the screen. (Good for low resolution pixely games!)"],
+["Gfx.onwindowresized","():Bool","F", "Returns TRUE if the window has been resized. Useful if using Gfx.resizescreen(0, 0)."],
 ["Gfx.loadimage","(imagename:String)","P", "Loads a .PNG or .JPG image from data/graphics/."],
 ["Gfx.drawimage","(x:Float, y:Float, imagename:String)","F", "Draw this image to the point (x, y)."],
 ["Gfx.drawsubimage","(x:Float, y:Float, x1:Float, y1:Float, w1:Float, h1:Float, imagename:String)","F", "Draw a subset of this image from the rectangle (x1, y1, w1, h1) to the point (x, y)."],
