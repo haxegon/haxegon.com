@@ -337,8 +337,6 @@ var haxeHintArray = [
 
 ["Scene.change","(newscene:Class)","F", "Change the game's current scene."],
 ["Scene.restart","(scenename:Class)","F", "Discard and reload the named scene. Doesn't change to it (you still need to call Scene.change() afterwards), and doesn't have to be the currently running scene."],
-["Scene.name","(requiredscene:Class):Class","F", "Returns the name of a scene as a String."],
-["Scene.get","(requiredscene:Class):Class","F", "Advanced! Returns an instance of the required scene. Can be used to access that Scene's member variables, though alternatively you could just make that scene's functions static."],
 
 ["Convert.tostring","(1234):String","F"],
 ["Convert.toint",'("15"):Int',"F","Convert a string or a floating-point number to an integer."],
