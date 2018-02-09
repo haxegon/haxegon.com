@@ -12,9 +12,9 @@ Rough guide:
  
  5 - Install an IDE (for windows try <a href="http://haxedevelop.org/">HaxeDevelop</a>, for Mac/Linux try <a href="https://sublimetext.com/2">Sublime Text 2</a>).
  
- 6 - Download a <a href="https://github.com/TerryCavanagh/haxegon/raw/master/blankproject.zip">blank haxegon project</a>!
+ 6 - Download a <a href="https://github.com/haxegon/haxegon/raw/master/blankproject.zip">blank haxegon project</a>!
  
-You can find examples here: <a href="https://github.com/TerryCavanagh/haxegon-samples">haxegon-samples</a>
+You can find examples here: <a href="https://github.com/haxegon/haxegon-samples">haxegon-samples</a>
 
 And full reference documentation here: <a href="reference/gfx.html">Reference</a>
 

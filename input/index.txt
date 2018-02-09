@@ -7,6 +7,6 @@ To see how to setup up the library, read the <a href="setup.html">Setup</a> page
 
 You can see a reference manual for the library on the <a href="reference/gfx.html">Reference</a> page.
 
-You can find some example projects for reference on the <a href="https://github.com/TerryCavanagh/haxegon-samples">haxegon-samples</a> github page. More coming soon!
+You can find some example projects for reference on the <a href="https://github.com/haxegon/haxegon-samples">haxegon-samples</a> github page. More coming soon!
 
 <small>(To do: make a proper website)</small>
