@@ -372,6 +372,7 @@ var haxeHintArray = [
 ["Math.sqrt","(v:Float):Float","F"],
 ["Math.tan","(v:Float):Float","F"],
 
+["Core.version", ":String", "C", "Get the current version of Haxegon. Haxegon and its extensions use Sematic Versioning: https://semver.org/"],
 ["Core.fps",":Int","C", "Change the game's framerate."],
 ["Core.time",":Float","C", "is equal to the number of seconds passed since the game started."],
 ["Core.showstats",":Bool","C", "Set to true to show stats like framerate."],
