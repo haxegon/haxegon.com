@@ -369,3 +369,6 @@ for (var i=0;i<modules.length;i++){
 for (var i=0; i<filelist.length; i++){
 	generatepage(filelist[i]);
 }
+
+generatepage("plugins/index");
+generatepage("plugins/guidelines");
