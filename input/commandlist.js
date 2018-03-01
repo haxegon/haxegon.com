@@ -166,8 +166,8 @@ var haxeHintArray = [
 ["Text.BOTTOM","","P", "A constant used for text alignment/rotation in Text.align and Text.rotation()."],
 
 ["Data.loadtext","(textfile:String):Array<String>","F", "Loads in a </b>.txt</b> file from <b>data/text/</b> as an array of Strings, split by newlines. The files needs to have the extension .txt."],
-["Data.loadjson","(jsonfile:String):Dynamic","F", "Loads in a </b>.json</b> file from <b>data/text/</b> as a dynamic object. The file needs to have the extension .json. (to do: detailed json instructions)"],
-["Data.loadxml","(xmlfile:String):Dynamic","F", "Loads in a </b>.xml</b> file from <b>data/text/</b> as a dynamic object. The file needs to have the extension .xml. (to do: detailed xml instructions)"],
+["Data.loadjson","(jsonfile:String):Dynamic","F", "Loads in a </b>.json</b> file from <b>data/text/</b> as a dynamic object. The file needs to have the extension .json. See <a href=\"https://github.com/haxegon/haxegon-samples/tree/master/simple/09%20-%20json%20and%20xml%20loading\">Json and Xml parsing examples</a> for more info."],
+["Data.loadxml","(xmlfile:String):Dynamic","F", "Loads in a </b>.xml</b> file from <b>data/text/</b> as a dynamic object. The file needs to have the extension .xml. See <a href=\"https://github.com/haxegon/haxegon-samples/tree/master/simple/09%20-%20json%20and%20xml%20loading\">Json and Xml parsing examples</a> for more info."],
 ["Data.loadcsv","(csvfile:String, delimiter = \",\"):Array<???>","F", "Loads in a </b>.csv</b> file from <b>data/text/</b> as an array of values."],
 ["Data.load2dcsv","(csvfile:String, delimiter = \",\"):Array<?>","F", "Loads in a two-dimensional </b>.csv</b> file from <b>data/text/</b> as a 2d array of values. Use <b>Data.width</b> and <b>Data.height</b> to read the width and height of the loaded 2d CSV."],
 ["Data.create2darray","(width:Int, height:Int, defaultvalue:?):Array<Array<?>>","F", "A helper function to give you a 2D array of given width and height, set to a default value that you choose."],
