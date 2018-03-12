@@ -351,6 +351,7 @@ var haxeHintArray = [
 ["Core.showstats",":Bool","C", "Set to true to show stats like framerate."],
 ["Core.delaycall","(f:Function, t:Float)","P", "Tells Haxegon to call this function after \"t\" seconds have passed."],
 ["Core.quit","()","P", "Native targets only. Closes the application."],
+["Core.mobilebrowser","():Bool","P", "Works on HTML5 target only (returns false on other targets). Returns true if the user is viewing the app in a mobile browser (like iPhone Safari)."],
 ["Core.window",":Window","C", "Native targets only. Gives you access to the native window object. See <a href=\"http://api.openfl.org/lime/ui/Window.html\">OpenFL documentation</a> for more information."],
 
 ["Geom.inbox","(x, y, rectx, recty, rectwidth, rectheight):Bool","F", "Returns true if the point (x, y) is in the rectangle (rectx, recty)x(rectwidth, rectheight)."],
