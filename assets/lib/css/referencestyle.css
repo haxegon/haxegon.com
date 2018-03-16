@@ -1,0 +1,335 @@
+a {
+    text-decoration: none;
+}
+
+body {
+  font-family: 'Lora', serif;
+}
+
+#enumFrame {
+    background-color: #f8f8fa;
+    border: solid 1px #ccc;
+    border-spacing: 0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    max-width:640px;
+    padding: 10px 30px;
+    word-spacing: 10px;
+}
+
+#colorFrame {
+    background-color: #f8f8fa;
+    border: solid 1px #ccc;
+    border-spacing: 0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    max-width:640px;
+    padding: 10px 30px;
+}
+
+dt {
+    background-color: #eee;
+    display: inline-block;
+    border-radius: 5px;
+    padding:5px;
+    font-weight: bold;
+}
+dd {
+    margin-top:20px;
+    margin-bottom:20px;
+}
+pre {
+  margin-top: 0em;
+  margin-bottom: 0em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+h2 {
+    color:black;
+    text-decoration: none;
+}
+h2 {
+  color:black;
+  text-decoration: none;
+}
+
+div{
+  margin:0;
+  padding:0;
+  position:relative; padding-right:0em; border:0;
+}
+
+div .editLink {
+    font-size: 200%;
+  position:absolute; right:8px; top:3px; text-align:right;text-decoration: none;
+}
+table {
+    background-color: #f8f8fa;
+    border: solid 1px #ccc;
+    border-spacing: 0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+table th {
+    font-weight: bold;
+    background-color: #fff6b0;
+    padding: 0.3em;
+}
+
+
+td {
+    padding: 0.4em;
+}
+
+th, td {
+    /*border-right: solid 1px #ccc;*/
+}
+
+tr.odd {
+    background-color: #e8e8e8;
+}
+
+table {
+/*    box-shadow: 10px 10px 5px #888888; */
+}
+
+#enumFrame {
+  font-family: monospace;
+    /*box-shadow: 0 0 5px #888888;    */
+}
+.codeInsert {
+    border: 1px solid #cccccc;
+    background-color: white;
+    border-radius: 5px;
+    margin: 3px;
+    padding:5px;
+    font-family: monospace;
+    min-height: 30px;
+    /*max-width:800px;*/
+    /*box-shadow:         inset 0 0 10px #000000;*/
+}
+
+/* Header - need to undo some of the table properties because I couldn't
+ * figure out how to lay out the title with only CSS :(
+ */
+table#header {
+    background-color: #f4f4f4;
+    border: none;
+    border-bottom: solid 1px #ddd;
+    margin-bottom: 0.5em;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+}
+
+table#header td {
+    border: none;
+}
+
+
+.funcdec {
+    font-weight: bold;
+    font-size: 150%;
+  font-family: monospace;
+}
+
+.moduleButton {
+    display: inline-block;;
+    background-color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding:3px 3px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: black;
+}
+
+.moduleButton:hover{
+    background-color: #eee;
+}
+.moduleSelected {
+    display: inline-block;;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding:3px 3px;
+    text-decoration: none;
+    background-color: #ccc;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.navBar {
+}
+
+.titleText{
+
+}
+
+.docLine {
+    padding-top: 3px;
+}
+
+.moduleDescription{
+    background-color: #f4f4f4;
+    margin-bottom: 10px;
+    padding:5px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+
+@keyframes donkRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bottomDonk{
+    animation-name: donkRotate;
+    animation-duration: 2s;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
+    animation-delay:0;
+    animation-play-state: paused;
+}
+.bottomDonk:hover{
+    animation-play-state: running;
+}
+
+.tutoriallink {
+  color: blue;
+  text-decoration: none;;
+}
+.tutorialBody {
+    width:600px;
+}
+.tutorialCodeInsert {
+    width:400px;
+}
+
+
+
+.Col_BLACK {
+  background: #000;
+  color: #fff;
+}
+
+.Col_GREY {
+  background: #9D9D9D;
+  color: #000;
+}
+
+.Col_GRAY {
+  background: #9D9D9D;
+  color: #000;
+}
+
+.Col_WHITE {
+    border: 1px solid black;
+  background: #fff;
+  color: #000;
+}
+
+  .Col_RED {
+    color: #fff;
+    background: #BE2633;
+  }
+  .Col_PINK {
+    content: " ";
+    color: #fff;
+    background: #E06F8B;
+  }
+  .Col_DARKBROWN {
+    content: " ";
+    color: #fff;
+    background: #493C2B;
+    border: 1px solid black;
+  }
+  .Col_BROWN {
+    content: " ";
+    color: #fff;
+    background: #A46422;
+  }
+  .Col_ORANGE {
+    content: " ";
+    color: #fff;
+    background: #EB8931;
+  }
+  .Col_YELLOW {
+    content: " ";
+    color: #000;
+    background: #F7E26B;
+  }
+  .Col_DARKGREEN {
+    content: " ";
+    color: #fff;
+    background: #2F484E;
+    border: 1px solid black;
+  }
+  .Col_GREEN {
+    content: " ";
+    background: #44891A;
+    color:white;
+  }
+  .Col_LIGHTGREEN {
+    content: " ";
+    background: #A3CE27;
+  }
+  .Col_NIGHTBLUE {
+    content: " ";
+    background: #1B2632;
+    color:white;
+  }
+  .Col_DARKBLUE {
+    content: " ";
+    background: #005784;
+    color:white;
+  }
+  .Col_BLUE {
+    content: " ";
+    background: #31A2F2;
+  }
+  .Col_LIGHTBLUE {
+    content: " ";
+    background: #B2DCEF;
+  }
+  .Col_MAGENTA {
+    content: " ";
+    background: #FF00FF;
+    color:white;
+  }
+
+  .Col_TRANSPARENT {
+    content: " ";
+    background: transparent;
+    border: 1px solid black;
+  }
+
+  .colbubble{
+    border-radius: 5px;
+    padding:3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 0;
+    margin-right: 0;
+    line-height: 30px;
+  }
+
+  h1 {
+    white-space: normal;
+  }
+
+  .docLine {
+    width:500px;
+  }
