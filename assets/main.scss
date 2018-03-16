@@ -1,0 +1,50 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ee7200;
+}
+
+a {
+  color: #ee7200;
+}
+
+a:visited {
+  color: #cc6104;
+}
+
+.site-header {
+  border-top: none;
+  border-bottom: none;
+}
+
+.site-title {
+  &,
+  &:visited {
+    color: #ee7200;
+  }
+}
+
+.site-title-img {
+  float: left;
+  position: relative;
+  height: 2rem;
+  top: .7rem;
+}
+
+.site-nav .page-link {
+  color: #ee7200;
+}
+
+.home-jumbotron {
+  text-align: center;
+
+  .img {
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+  }
+}

@@ -1,37 +1,31 @@
-## Welcome to GitHub Pages
+# haxegon.com
 
-You can use the [editor on GitHub](https://github.com/haxegon/haxegon.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is the source for the [Haxegon website](http://www.haxegon.com).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+To build the site, make sure you have the following downloaded and installed first:
 
-### Markdown
+1. [Ruby version 2.2.5](https://www.ruby-lang.org/en/news/2016/04/26/ruby-2-2-5-released) or above.
+2. [Jekyll version 3.7.3](https://jekyllrb.com) or above.
+3. [Node.js and npm](https://nodejs.org).
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The website is powered by Jekyll for static content, using a modified [Minima](https://github.com/jekyll/minima) theme. Refer to the [Jekyll documentation](https://jekyllrb.com/docs/home) for more information. Node.js is used to generate the documentation.
 
-```markdown
-Syntax highlighted code block
+## Instructions
 
-# Header 1
-## Header 2
-### Header 3
+Once you have completed the above steps:
 
-- Bulleted
-- List
+1. Clone the repository.
+2. `cd repository`.
+3. Run `bundle exec jekyll serve`.
+4. Browse to `http://localhost:4000`.
 
-1. Numbered
-2. List
+To generate documentation:
 
-**Bold** and _Italic_ and `Code` text
+1. Make your documentation modification in `commandlist.js`.
+2. Run `node builddocs.js`.
 
-[Link](url) and ![Image](src)
-```
+The HTML files for the documentation will be generated into the `docs` folder.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## How To Contribute
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/haxegon/haxegon.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Contributions are welcome! Feel free to contribute corrections, better examples or clearer documentation!
