@@ -5,7 +5,7 @@ date:   2018-03-15 15:53:04 +0800
 categories: blog
 ---
 
-Welcome to the new Hexagon webiste!
+Welcome to the new Hexagon website!
 
 This is where we will be sharing news about all things related to Hexagon.
 
