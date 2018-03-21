@@ -353,6 +353,7 @@ var haxeHintArray = [
 ["Core.quit","()","P", "Native targets only. Closes the application."],
 ["Core.mobilebrowser","():Bool","P", "Works on HTML5 target only (returns false on other targets). Returns true if the user is viewing the app in a mobile browser (like iPhone Safari)."],
 ["Core.window",":Window","C", "Native targets only. Gives you access to the native window object. See <a href=\"http://api.openfl.org/lime/ui/Window.html\">OpenFL documentation</a> for more information."],
+["Core.fullscreenbutton","(x:Float, y:Float, width:Float, height:Float)","F", "For security reasons, most browsers will not allow your application to enter fullscreen mode unless the change is triggered as a result of a mouse click (in a specific, low level way). This function designates a rectange on the screen that, when clicked, will toggle fullscreen mode. It is up to you to draw something on the screen that looks like a fullscreen button below this!"],
 
 ["Geom.inbox","(x, y, rectx, recty, rectwidth, rectheight):Bool","F", "Returns true if the point (x, y) is in the rectangle (rectx, recty)x(rectwidth, rectheight)."],
 ["Geom.overlap","(x1, y1, w1, h1, x2, y2, w2, h2):Bool","F", "Returns true if the rectangle (x1, y1)x(w1, h1) overlaps with the rectangle (x2, y2)x(w2, h2)."],
