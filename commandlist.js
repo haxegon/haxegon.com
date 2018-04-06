@@ -342,7 +342,7 @@ var haxeHintArray = [
 ["Random.bool","():Bool","F","50:50 chance of being true/false"],
 ["Random.chance","(n:Float):Bool","F","n% chance (out of 100%) of being true."],
 ["Random.pick","(list:Array<T>):T","F","Picks a random element from an array."],
-["Random.shuffle","(list:Array<T>):T","F","Shuffles an array and returns it."],
+["Random.shuffle","(list:Array<T>):T","F","Shuffles an array and returns it.  (Modifies the original array)."],
 ["Random.seed",":Int","P","The current seed. Set to an integer of your choosing for a predicable sequence of results."],
 
 ["Core.version", ":String", "C", "Get the current version of Haxegon. Haxegon and its extensions use Sematic Versioning: https://semver.org/"],
