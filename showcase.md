@@ -17,6 +17,30 @@ Status: In Development
 Creator: [Terry Cavanagh](http://distractionware.com) \\
 Status: Complete
 
+# Separate the Lines
+[![Separate the Lines](/assets/images/showcase/separate_the_lines.png "Separate the Lines"){:height="250px" width="250px"}](https://ded.increpare.com/~locus/separate_the_lines/)
+
+Creator: [Stephen Lavelle](https://www.increpare.com) \\
+Status: Complete
+
+# Schwung
+[![Schwung](/assets/images/showcase/Schwung.png "Schwung"){:height="250px" width="250px"}](https://ded.increpare.com/~locus/Schwung/)
+
+Creator: [Stephen Lavelle](https://www.increpare.com) \\
+Status: Complete
+
+# 5 Lap Challange
+[![5 Lap Challange](/assets/images/showcase/5runden.png "5 Lap Challange"){:height="250px" width="250px"}](https://ded.increpare.com/~locus/5runden/)
+
+Creator: [Stephen Lavelle](https://www.increpare.com) \\
+Status: Complete
+
+# Snow Game
+[![Snow Game](/assets/images/showcase/schneespiel.png "Snow Game"){:height="250px" width="250px"}](https://ded.increpare.com/~locus/schneespiel/)
+
+Creator: [Stephen Lavelle](https://www.increpare.com) \\
+Status: Complete
+
 # 10 Second Sprint
 [![10 Second Sprint](/assets/images/showcase/10secondsprint.png "10 Second Sprint"){:height="250px" width="250px"}](https://ded.increpare.com/~locus/10SekundenSprint/)
 
