@@ -67,6 +67,8 @@ var haxeHintArray = [
 ["Gfx.filltri","(x1:Float, y1:Float, x2:Float, y2:Float, x3:Float, y3:Float, col:Int, alpha:Float = 1.0)","F", "Fill a triangle between the points (x1, y1), (x2, y2) and (x3, y3) with given colour and alpha."],
 ["Gfx.drawcircle","(x:Float, y:Float, radius:Float, color:Int, alpha:Float = 1.0)","F", "Draw a cirle centered at (x, y), with given radius, colour and alpha."],
 ["Gfx.fillcircle","(x:Float, y:Float, radius:Float, color:Int, alpha:Float = 1.0)","F","Fill a cirle centered at (x, y), with given radius, colour and alpha."],
+["Gfx.drawellipse","(x:Float, y:Float, radius1:Float, radius2:Float, color:Int, alpha:Float = 1.0)","F", "Draw an ellipse centered at (x, y), with given radiuses radius1 and radius2, colour and alpha."],
+["Gfx.fillellipse","(x:Float, y:Float, radius1:Float, radius2:Float, color:Int, alpha:Float = 1.0)","F","Fill a cirle centered at (x, y), with given radiuses radius1 and radius2, colour and alpha."],
 ["Gfx.drawhexagon","(x:Float, y:Float, radius:Float, angle:Float, color:Int, alpha:Float = 1.0)","F", "Draw a hexagon centered at (x, y), with given radius, angle, colour and alpha."],
 ["Gfx.fillhexagon","(x:Float, y:Float, radius:Float, angle:Float, color:Int, alpha:Float = 1.0)","F","Draw a filled hexagon centered at (x, y), with given radius, angle, colour and alpha."],
 ["Gfx.drawline","(x1:Float, y1:Float, x2:Float, y2:Float, color:Int, alpha:Float = 1.0)","F", "Draw a line between (x1, y1) and (x2, y2) with a given colour and alpha."],
@@ -81,6 +83,7 @@ var haxeHintArray = [
 ["Gfx.resizescreen","(width:Float, height:Float, keeppixelratio:Bool = false)","F", "Sets the width and the height of the screen canvas. Automatically scales the screen to fit in the current window, depending on your resize settings. Advanced settings: If you set both width and height to 0, your screen size will instead match the window exactly, with Gfx.screenwidth and Gfx.screenheight changing to match. If you set EITHER width or height to 0, then you'll get a dynamic canvas, where one axis is streched and the other changes to match the window width. \"keeppixelratio\" is an optional parameter that tells the screen to use black borders around your screen when scaling to keep a 1:1 pixel ratio, instead of stretching the screen. (Good for low resolution pixely games!)"],
 ["Gfx.onwindowresized","():Bool","F", "Returns TRUE if the window has been resized. Useful if using Gfx.resizescreen(0, 0)."],
 ["Gfx.loadimage","(imagename:String)","P", "Loads a .PNG or .JPG image from data/graphics/."],
+["Gfx.unloadimage","(imagename:String)","P", "Unloads an image, freeing up its resources."],
 ["Gfx.drawimage","(x:Float, y:Float, imagename:String)","F", "Draw this image to the point (x, y)."],
 ["Gfx.drawsubimage","(x:Float, y:Float, x1:Float, y1:Float, w1:Float, h1:Float, imagename:String)","F", "Draw a subset of this image from the rectangle (x1, y1, w1, h1) to the point (x, y)."],
 ["Gfx.imagewidth","(imagename:String):Int","P", "Returns the width of an image."],
@@ -148,7 +151,7 @@ var haxeHintArray = [
 
 ["Text.font",":String","P","Set the font to a font from <b>data/fonts/</b>"],
 ["Text.size",":Float","P","Change the size of the font. For ttf fonts, sizes are given in point format - e.g. 16, 32, 48, etc. For bitmap fonts, sizes are given in multiple scales - 1 is normal, 2 is double size, 3 is triple, etc."],
-["Text.setfont","(font:String, size:Float)","F","Change the font and font size at the same time."],
+["Text.setfont","(font:String, size:Float, ?usehighres:Bool)","F","Change the font and font size at the same time. (Can optionally set usehighres to increase the texture size of the font, which may increase its legibility in some cases.)"],
 ["Text.display","(x:Float, y:Float, text:String, color:Int = 0xFFFFFF, alpha:Float = 1.0)","F","Draws text on the screen at a given point."],
 ["Text.input",'(x:Float, y:Float, color:Int = Col.WHITE):Bool',"F", "Displays a prompt on screen where you can type a string. Returns true when the user presses Key.ENTER."],
 ["Text.inputresult",":String","P", "A string containing the most recent value of Text.input() after Key.ENTER has been pressed."],
@@ -176,7 +179,7 @@ var haxeHintArray = [
 
 ["Save.filename",":String","P", "Optional! Sets the name of the savefile to that <b>Save.load()</b> and <b>Save.savevalue()</b> will use. By default, the save filename is <i>\"haxegongame\"</i>."],
 ["Save.savevalue","(key:String, value:?)","F", "Saves a value. Can be loaded later with <b>Save.loadvalue()</b>."],
-["Save.loadvalue","(key:String)","F", "Loads a value that you've previously saved with <b>Save.savevalue()</b>. If no saved value for that key exists, then it returns 0."],
+["Save.loadvalue","(key:String, ?defaultvalue:?)","F", "Loads a value that you've previously saved with <b>Save.savevalue()</b>. If no saved value for that key exists, then it returns the defaultvalue."],
 ["Save.exists","(key:String):Bool","F", "Returns true if a value has been saved for this key in the current file, false otherwise."],
 ["Save.fileexists","(savefile:String):Bool","F", "Returns true if a given save file exists, false otherwise."],
 ["Save.delete","([filename:String])","F", "Deletes all saved values in a given filename. If no filename is given, deletes all saved values in <i>\"haxegongame\"</i>."],
@@ -348,11 +351,14 @@ var haxeHintArray = [
 ["Core.version", ":String", "C", "Get the current version of Haxegon. Haxegon and its extensions use Sematic Versioning: https://semver.org/"],
 ["Core.fps",":Int","C", "Change the game's framerate."],
 ["Core.time",":Float","C", "is equal to the number of seconds passed since the game started."],
+["Core.imagesmoothing ",":Bool","C", "Set to true uses bilinear smoothing when displaying images. Set to false by default."],
+["Core.enablescreen ",":Bool","C", "Advanced. Set to true to disable the Haxegon screen completely. This is useful if you just want to use Starling display objects directly!"],
 ["Core.showstats",":Bool","C", "Set to true to show stats like framerate."],
 ["Core.delaycall","(f:Function, t:Float)","P", "Tells Haxegon to call this function after \"t\" seconds have passed."],
 ["Core.quit","()","P", "Native targets only. Closes the application."],
 ["Core.mobilebrowser","():Bool","P", "Works on HTML5 target only (returns false on other targets). Returns true if the user is viewing the app in a mobile browser (like iPhone Safari)."],
 ["Core.window",":Window","C", "Native targets only. Gives you access to the native window object. See <a href=\"http://api.openfl.org/lime/ui/Window.html\">OpenFL documentation</a> for more information."],
+["Core.fullscreenbutton","(x:Float, y:Float, width:Float, height:Float)","F", "For security reasons, most browsers will not allow your application to enter fullscreen mode unless the change is triggered as a result of a mouse click (in a specific, low level way). This function designates a rectange on the screen that, when clicked, will toggle fullscreen mode. It is up to you to draw something on the screen that looks like a fullscreen button below this!"],
 
 ["Geom.inbox","x:Float, y:Float, rectx:Float, recty:Float, rectw:Float, recth:Float):Bool","F", "Returns true if the point (x, y) is in the rectangle (rectx, recty)x(rectw, recth)."],
 ["Geom.overlap","(x1:Float, y1:Float, w1:Float, h1:Float, x2:Float, y2:Float, w2:Float, h2:Float):Bool","F", "Returns true if the rectangle (x1, y1)x(w1, h1) overlaps with the rectangle (x2, y2)x(w2, h2)."],
@@ -383,5 +389,6 @@ var haxeHintArray = [
 ["Geom.tan","(v:Float):Float","F", "Returns the trigonometric tangent of the specified angle `v`, in degrees. (Almost the same as Math.tan(), except that it returns degrees instead of radians.)"],
 
 ["Debug.log","(anything)","F", "Traces out a line in the haxegon console, and the terminal. To trace to the terminal only, simply use trace();"],
-["Debug.clear","()","F", "Clears the haxegon console."]
+["Debug.clear","()","F", "Clears the haxegon console."],
+["Debug.limitdrawcalls ",":Int","C", "Advanced. Tells starling to stop drawing after N draw calls. Useful for displaylist debugging."]
 ];

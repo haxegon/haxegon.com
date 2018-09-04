@@ -3,7 +3,7 @@
 
   run "node builddocs.js" on your command line to generate to the output/ folder
 */
-var versionname = "0.12.1";
+var versionname = "0.13.0";
 
 var ncp = require('ncp').ncp;
 var fs = require('fs');
