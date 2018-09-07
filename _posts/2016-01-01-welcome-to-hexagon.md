@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Welcome to Haxegon!"
-date:   2018-03-15 15:53:04 +0800
+date:   2016-01-01 15:53:04 +0800
 categories: blog
 ---
 

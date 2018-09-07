@@ -6,4 +6,3 @@ redirect_to:
   - /docs/gfx.html
 heading: Documentation
 ---
-
