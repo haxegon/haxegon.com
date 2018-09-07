@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "First Haxegon Release"
-date:   2016-11-06 00:00:00 +0800
+date:   2016-11-06
 categories: blog
 ---
 
