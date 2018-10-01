@@ -5,11 +5,23 @@ permalink: /showcase/
 heading: Showcase
 ---
 
+# Dicey Dungeons
+[![Dicey Dungeons](/assets/images/showcase/dicey.png "Dicey Dungeons"){:width="640px"}](http://diceydungeons.com/)
+
+Creator: [Terry Cavanagh](http://distractionware.com) \\
+Status: In Development
+
 # State Machine
 [![State Machine](/assets/images/showcase/statemachine.png "State Machine")](http://statemachinegame.com)
 
 Creator: [Terry Cavanagh](http://distractionware.com), [Ruari O'Sullivan](http://wootfu.com/) \\
 Status: In Development
+
+# The Purpose of Water
+[![The Purpose of Water](/assets/images/showcase/derzweck.png "The Purpose of Water"){:height="250px" width="250px"}](https://ded.increpare.com/~locus/ZweckDesWassers/)
+
+Creator: [Stephen Lavelle](https://www.increpare.com) \\
+Status: Complete
 
 # Tiny Heist
 [![Tiny Heist](/assets/images/showcase/tinyheist-640x293.png "Tiny Heist")](https://terrycavanaghgames.com/tinyheist/)
